@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Shadowrun name generator</string>
     <string name="By_origin_title">BY ORIGIN</string>
+    <string name="By_sovereignity_title">BY SOVEREIGNITY</string>
+    <string name="Artists_title">ARTISTS</string>
+    <string name="Bars_and_restruants_title">BARS</string>
+    <string name="Corporations_title">CORPORATIONS</string>
+    <string name="Esoteric_title">ESOTERIC</string>
+    <string name="Fast_food_title">FAST FOOD</string>
+    <string name="Gangs_title">GANGS</string>
+    <string name="Mr_johnson">MR.JOHNSON</string>
+    <string name="Triads_and_movies_title">TRIADS &amp; MOVIES</string>
+    <string name="Runners_title">RUNNERS</string>
+    <string name="Shops_title">SHOPS</string>
+    <string name="Weapons_title">WEAPONS</string>
+
 </resources>
