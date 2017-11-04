@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/gen_name1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name 1"
@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteX="13dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/gen_name2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name 2"
@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.04" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/gen_name3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name 3"
@@ -46,7 +46,7 @@
         app:layout_constraintVertical_bias="0.518" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/gen_name4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name 4"
@@ -61,7 +61,7 @@
         app:layout_constraintHorizontal_bias="0.04" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/gen_name5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name 5"
@@ -76,7 +76,7 @@
         app:layout_constraintHorizontal_bias="0.04" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/gen_refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Refresh"
@@ -85,7 +85,8 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:onClick="buttonPressed"/>
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"

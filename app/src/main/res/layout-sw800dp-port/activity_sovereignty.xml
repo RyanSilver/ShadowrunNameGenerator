@@ -7,10 +7,10 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/sov_cas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="CAS"
         app:layout_constraintRight_toLeftOf="@+id/guideline20"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
@@ -18,13 +18,14 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline21"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:onClick="buttonPressed"/>
 
     <Button
-        android:id="@+id/button18"
+        android:id="@+id/sov_ucas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="UCAS"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
@@ -32,13 +33,14 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline21" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline21"
+        android:onClick="buttonPressed"/>
 
     <Button
-        android:id="@+id/button19"
+        android:id="@+id/sov_aztlan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="AZTLAN"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
@@ -46,13 +48,14 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline21" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline21"
+        android:onClick="buttonPressed"/>
 
     <Button
-        android:id="@+id/button20"
+        android:id="@+id/sov_ags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="AGS"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline20"
@@ -60,13 +63,14 @@
         app:layout_constraintTop_toTopOf="@+id/guideline21"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline22" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline22"
+        android:onClick="buttonPressed"/>
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/sov_hongKong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="HongKong"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
@@ -74,7 +78,8 @@
         app:layout_constraintTop_toTopOf="@+id/guideline21"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline22" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline22"
+        android:onClick="buttonPressed"/>
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"

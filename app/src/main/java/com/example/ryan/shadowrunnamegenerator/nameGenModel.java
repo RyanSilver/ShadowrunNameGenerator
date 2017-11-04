@@ -132,6 +132,7 @@ public class nameGenModel{
     Method generateName:
     requires context= "some context" + "0" || "1" || "2" if the context is possibly sexed/gendered.
     ex: OriItalian 0
+    ex:artists
     returns a name  based on given context variable. 0 for either male or female, 1 for male, and 2 for female.
     */
     public String generateName(String context){
