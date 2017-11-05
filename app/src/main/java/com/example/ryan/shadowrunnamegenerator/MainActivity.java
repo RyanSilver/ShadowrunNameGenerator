@@ -1,5 +1,6 @@
 package com.example.ryan.shadowrunnamegenerator;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.main_movies:
                 controller.resetContext();
-                controller.buildContext("Movies");
+                controller.buildContext("Trids");
                 displayNames();
                 break;
             case R.id.main_mrJohnson:
@@ -162,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
+        controller.resetContext();
         setContentView(R.layout.activity_main);
         super.onBackPressed();
     }

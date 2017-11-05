@@ -46,7 +46,7 @@ public class nameGenModel{
     private String [] Bars={"Bar 1","Bar 2","Bar 3"};
     private String [] Esoteric={"BS 1","BS 2","BS 3"};
     private String [] Gangs={"Gang 1","Gang 2","Gang 3"};
-    private String [] Triads={"Movie 1","Movie 2","Movie 3"};
+    private String [] Trids={"Movie 1","Movie 2","Movie 3"};
     private String [] Shops={"Shop 1","Shop 2","Shop 3"};
 
     private boolean isSexed(String context){
@@ -77,8 +77,8 @@ public class nameGenModel{
                 return Esoteric;
             case "Gangs":
                 return Gangs;
-            case "Triads":
-                return Triads;
+            case "Trids":
+                return Trids;
             case "Shops":
                 return Shops;
         }
