@@ -1,4 +1,5 @@
 package com.example.ryan.shadowrunnamegenerator;
+import android.util.Log;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -21,28 +22,32 @@ public class SAXHandler extends DefaultHandler {
 
   public void startElement(String uri, String localName,
                            String startElement, Attributes attributes )
-                            throws SAXException {
+          throws SAXException {
     validText = true;
     element = startElement;
-    if( startElement.equals( "allPOV" ) ) // start current pov
-      currentItem = new Item(attributes.getValue("infinitiveSpanish"),attributes.getValue("infinitiveEnglish") , "" );
+    Log.d("inapp","parseing");
+    if( startElement.equals( "item" ) ){ // start current item
+      currentItem = new Item( "", "","" );}
+
 
   }
 
   public void endElement(String uri, String localName,
                          String endElement ) throws SAXException {
     validText = false;
-    if( endElement.equals( "allPOV" ) ) // add current item to items
-      items.add( currentItem );
-  }
-  public String getValue(String qName){
-    return "";
+    if( endElement.equals( "item" ) ){ // add current item to items
+      Log.d("inapp",currentItem.toString());
+      items.add( currentItem );}
   }
 
   public void characters( char ch [], int start,
                           int length ) throws SAXException {
-    if( currentItem != null && element.equals( "conj" ) && validText )
-      currentItem.setFirstPersonPresent( new String( ch, start, length ) );
+    if( currentItem != null && element.equals( "title" ) && validText )
+      currentItem.setTitle( new String( ch, start, length ) );
+    else if( currentItem != null && element.equals( "link" )  && validText )
+      currentItem.setLink( new String( ch, start, length ) );
+    if( currentItem != null && element.equals( "description" ) && validText )
+      currentItem.setDescription( new String( ch, start, length ) );
   }
 }
 

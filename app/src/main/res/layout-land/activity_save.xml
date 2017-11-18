@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteX="0dp">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/save_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -34,7 +34,7 @@
         app:layout_constraintGuide_percent="0.20" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/save_discription"
         android:layout_width="349dp"
         android:layout_height="167dp"
         android:ems="10"
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/save_race"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/save_per"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -84,7 +84,7 @@
         app:layout_constraintVertical_bias="0.14999998" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/save_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"

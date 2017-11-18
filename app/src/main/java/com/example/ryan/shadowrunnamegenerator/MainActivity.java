@@ -1,19 +1,34 @@
 package com.example.ryan.shadowrunnamegenerator;
 
-import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
 import android.view.*;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 
 public class MainActivity extends AppCompatActivity {
-    private ListView listView;
+    static boolean loadMode=true;
+    static String toSave;
     private ListView displayListView;
     private ArrayList<String> listcontents;
     public static nameGenController controller;
+    private final String URL
+            = "http://litehouseproduction.com/mile-high-news-blog?format=rss";
+    private ListView listView;
+    private ArrayList<Item> listItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,24 +163,91 @@ public class MainActivity extends AppCompatActivity {
             case R.id.gen_refresh:
                 displayNames();
                 break;
-            //as of right now model does not support weapon name generation
-            //case R.id.main_weapons:
-              //  controller.resetContext();
-                //controller.buildContext("Weapons");
-                //displayNames();
-                //break;
+            case R.id.main_rss:
+                //Looper.prepare();
+                try{
+                    listItems.clear();
+                }catch (Exception e){}
 
+                setContentView( R.layout.activity_rss );
+                listView = (ListView) findViewById( R.id.list_view );
+                ParseTask task = new ParseTask( this );
+                task.execute( URL );
+                this.overridePendingTransition(R.anim.fade_in,0);
+                break;
             default:
                 Log.d("MainActivity","Unsupported button pressed");
                 break;
         }
-        Log.d("MainActivity",controller.getContext());
+        Log.d("MainActivity", "Button pressed exit");
     }
+    public void onClickText(View view){
+        loadMode=false;
+        try {
+            TextView v;
+            v= (TextView) view;
+            switch (view.getId()) {
+                case R.id.gen_name1:
+                    toSave = (String) v.getText();
+                    break;
+                case R.id.gen_name2:
+                    toSave = (String) v.getText();
+                    break;
+                case R.id.gen_name3:
+                    toSave = (String) v.getText();
+                    break;
+                case R.id.gen_name4:
+                    toSave = (String) v.getText();
+                    break;
+                case R.id.gen_name5:
+                    toSave = (String) v.getText();
+                    break;
+            }
+
+            Intent dataIntent = new Intent(this, DataActivity.class);
+            this.startActivity(dataIntent);
+            overridePendingTransition(R.anim.fade_in, 0);
+        }catch (Exception e){loadMode=true;}
+    }
+    private class ListItemHandler
+            implements AdapterView.OnItemClickListener {
+        public void onItemClick(AdapterView<?> parent, View view,
+                                int position, long id ) {
+            Item selectedItem = listItems.get( position );
+            Uri uri = Uri.parse( selectedItem.getLink( ) );
+            Intent browserIntent = new Intent( Intent.ACTION_VIEW, uri );
+            startActivity( browserIntent );
+        }
+    }
+    public void displayList( ArrayList<Item> items ) {
+        Log.d("inapp", items.toString());
+        listItems = items;
+        if( items != null ) {
+            // Build ArrayList of titles to display
+            ArrayList<String> titles = new ArrayList<String>( );
+            for( Item item : items ){
+                try{titles.add( item.toString( ) );}catch(Exception e){}
+            }
+
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>( this,
+                    android.R.layout.simple_list_item_1, titles );
+            listView.setAdapter( adapter );
+            MainActivity.ListItemHandler lih = new MainActivity.ListItemHandler( );
+            listView.setOnItemClickListener( lih );
+        } else
+            Toast.makeText( this, "Sorry - No data found",
+                    Toast.LENGTH_LONG ).show( );
+
+        Log.d("inapp", "display list exit");
+    }
+
+
     @Override
     public void onBackPressed() {
         controller.resetContext();
         setContentView(R.layout.activity_main);
-        super.onBackPressed();
+        //super.onBackPressed();
     }
 
     @Override
@@ -175,7 +257,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState){
-        savedInstanceState.putString("listItem0",listcontents.get(0));//...
 
     }
 

@@ -11,16 +11,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name 1"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintRight_toLeftOf="@+id/guideline6"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickText"
+        android:clickable="true"/>
 
     <TextView
         android:id="@+id/gen_name2"
@@ -35,7 +37,10 @@
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.04" />
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintVertical_bias="0.5"
+        android:onClick="onClickText"
+        android:clickable="true"/>
 
     <TextView
         android:id="@+id/gen_name3"
@@ -50,8 +55,10 @@
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintVertical_bias="0.5"
+        android:onClick="onClickText"
+        android:clickable="true"/>
 
     <TextView
         android:id="@+id/gen_name4"
@@ -66,7 +73,10 @@
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.04" />
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintVertical_bias="0.5"
+        android:onClick="onClickText"
+        android:clickable="true"/>
 
     <TextView
         android:id="@+id/gen_name5"
@@ -75,13 +85,16 @@
         android:text="Name 5"
         app:layout_constraintTop_toTopOf="@+id/guideline10"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintRight_toLeftOf="@+id/guideline6"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.04" />
+        app:layout_constraintHorizontal_bias="0.00"
+        app:layout_constraintVertical_bias="0.5"
+        android:onClick="onClickText"
+        android:clickable="true"/>
 
     <Button
         android:id="@+id/gen_refresh"
