@@ -25,24 +25,75 @@ public class MainActivity extends AppCompatActivity {
     private ListView displayListView;
     private ArrayList<String> listcontents;
     public static nameGenController controller;
+    private static boolean rsson;
     private final String URL
             = "http://litehouseproduction.com/mile-high-news-blog?format=rss";
     private ListView listView;
     private ArrayList<Item> listItems;
+    String currentLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         controller=new nameGenController();
+        setContentView(R.layout.activity_main);
+        rsson=false;
         if (savedInstanceState!=null){
             //reload the list view from memory
-            listcontents.clear();
+            try {
+                controller.resetContext();
+                controller.buildContext(savedInstanceState.getString("controllerContext"));
+                Log.d("context",""+controller.getContext().length());
+                Log.d("context",""+controller.getContext());
+                switch (controller.getContext().length()){
+                    case 0:
+                        //user is at main activity or rss activity.
+                        if(savedInstanceState.getBoolean("rss")){
+                            rsson=true;
+                            setContentView( R.layout.activity_rss );
+                            listView = (ListView) findViewById( R.id.list_view );
+                            ParseTask task = new ParseTask( this );
+                            task.execute( URL );
 
+                        }
+                        break;
+                    case 3:
+                        //user is at the origin or sov screen
+                        if(controller.getContext().charAt(0)=='S'){
+                            //at SOV
+                            setContentView(R.layout.activity_sovereignty);
+                        }else{
+                            setContentView(R.layout.activity_origin);
+                        }
+                        break;
+                    case 6:
+                        //user is done with Ori or sov and wants to select gender
+                        setContentView(R.layout.activity_gender);
+                        break;
+                    default:
+                        //user has already generated names
+                        setContentView(R.layout.activity_generated);
+                        TextView tv1=(TextView) findViewById(R.id.gen_name1);
+                        tv1.setText(savedInstanceState.getString("gen_name1"));
+                        TextView tv2=(TextView) findViewById(R.id.gen_name2);
+                        tv2.setText(savedInstanceState.getString("gen_name2"));
+                        TextView tv3=(TextView) findViewById(R.id.gen_name3);
+                        tv3.setText(savedInstanceState.getString("gen_name3"));
+                        TextView tv4=(TextView) findViewById(R.id.gen_name4);
+                        tv4.setText(savedInstanceState.getString("gen_name4"));
+                        TextView tv5=(TextView) findViewById(R.id.gen_name5);
+                        tv5.setText(savedInstanceState.getString("gen_name5"));
+                        break;
+
+                }
+            }catch(Exception e){
+                e.printStackTrace();
+                setContentView(R.layout.activity_main);}
         }
         else{
             //initialize the list
 
         }
+
         Log.d("method","OnCreate finished");
     }
     private void displayNames(){
@@ -63,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         tv5.setText(generator.generateName(context));
     }
     public void buttonPressed(View view){
-        view.equals(findViewById(R.id.main_origin));
         switch(view.getId()){
             case R.id.main_origin:
                 controller.resetContext();
@@ -80,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_artists:
                 controller.resetContext();
                 controller.buildContext("Artists");
+
                 displayNames();
                 break;
             case R.id.main_bars:
@@ -133,11 +184,11 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_gender);
                 break;
             case R.id.sov_aztlan:
-                controller.buildContext("Aztlan");
+                controller.buildContext("Azt");
                 setContentView(R.layout.activity_gender);
                 break;
             case R.id.sov_ucas:
-                controller.buildContext("Ucas");
+                controller.buildContext("Uca");
                 setContentView(R.layout.activity_gender);
                 break;
             case R.id.sov_cas:
@@ -145,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_gender);
                 break;
             case R.id.sov_hongKong:
-                controller.buildContext("HongKong");
+                controller.buildContext("Hon");
                 setContentView(R.layout.activity_gender);
                 break;
             case R.id.gender_both:
@@ -168,7 +219,8 @@ public class MainActivity extends AppCompatActivity {
                 try{
                     listItems.clear();
                 }catch (Exception e){}
-
+                controller.resetContext();
+                rsson=true;
                 setContentView( R.layout.activity_rss );
                 listView = (ListView) findViewById( R.id.list_view );
                 ParseTask task = new ParseTask( this );
@@ -257,6 +309,27 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState){
+        TextView test=(TextView) findViewById(R.id.gen_name1);
+        savedInstanceState.putString("controllerContext",controller.getContext());
+        savedInstanceState.putBoolean("rss",rsson);
+        try{
+            savedInstanceState.putString("gen_name1",(String) test.getText());
+            test=(TextView) findViewById(R.id.gen_name2);
+            savedInstanceState.putString("gen_name2",(String) test.getText());
+            test=(TextView) findViewById(R.id.gen_name3);
+            savedInstanceState.putString("gen_name3",(String) test.getText());
+            test=(TextView) findViewById(R.id.gen_name4);
+            savedInstanceState.putString("gen_name4",(String) test.getText());
+            test=(TextView) findViewById(R.id.gen_name5);
+            savedInstanceState.putString("gen_name5",(String) test.getText());
+        }catch (Exception e){
+            savedInstanceState.putString("gen_name1","");
+            savedInstanceState.putString("gen_name2","");
+            savedInstanceState.putString("gen_name3","");
+            savedInstanceState.putString("gen_name4","");
+            savedInstanceState.putString("gen_name5","");
+        }
+
 
     }
 

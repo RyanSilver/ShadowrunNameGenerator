@@ -6,8 +6,8 @@ package com.example.ryan.shadowrunnamegenerator;
 
 public class nameGenModel{
     //names stored in these fields. fields with extra colums are for a field that can have a different sex.
-    private String [][] SovCas={{"Casmale 1","Casmale 2","Casmale 3"},
-            {"Casfemale 1","Casfemale 2","Casfemale 3"}};
+    private String [][] SovCas={{"Senor Mihai Abdelkarim Larsen", "Hugh Jackson-Giles", "Emilio Jose Nabil Peralta", "Cody Antonio Boyer-Beltran", "George Andrews", "Ryan Tapia-Julian", "Luis Carlos Martinez", "Erik Lee Barrientos-Boyd", "Senor Francisco Rafael Sepulveda", "Senor Rayco Cherry-Briggs", "Joan Carles Turner-Torres", "Roberto Carlos Cohen-Ortiz", "Volodymyr Tudela", "Senor Laureano Valls", "Tyrone Moses", "Theodore Camara", "Guy Ford", "Juan Pedro Lin-Bautista", "Jorge Munoz", "Senor Enrique Jose Stout-Roca", "Cory Nicanor Lara", "Alvin Alejo Dunlap-Sacristan", "Jose Juan Alvarado", "Angel Francisco Jose Javier Schultz", "Eric Atanasio Egea", "Senor Joaquin Roca", "Juan Cruz Sancho", "Marion Francisco Juan Lozano", "Isaac Curtis", "Senor Gustavo Adolfo Gallardo", "Manuel Jesus Petersen", "Gines Wong-Camino", "Gerardo Mcdaniel", "Marvin Ruben Madden", "Cecil Castilla", "Leopoldo Kent-Angulo", "Jose Daniel Victor Manuel Costa", "Rodney Candido Chen", "Antonio Francisco Toribio-Perkins", "Christopher Rico-Puig", "Viorel Manas    Andrea Kirk", "Dwayne Ponce-Moran", "Ronald Reeves-Davidson", "Reginald Kelly Patton", "Josep Antoni Montoya", "Daniel Buchanan-Frost", "Craig Vaca-Carr", "Fortunato Jordi Maldonado", "Beltran Gonzalez", "Delfin Jordan Clark", "Eric Sanchis", "Heliodoro Quiroga-Parker", "Danny Branch-Allen", "Senor Angel Antonio Ball", "Randall Aguilar", "Ricky Herbert Baena", "Derek Marcelino Cobos", "Dwight Espejo", "Sean Gaines-Potter", "Senor Pablo Jose Florian Santiago", "Guy Ricardo Jose Paris", "Jesus Francisco Stein-Tucker", "Julio Escudero-Toro", "Jay Castaneda", "Dean Hawkins-Castro", "Franklin Luis Fernando Cordova-Quinones", "Javier Antonio Kramer", "Eugene Muniz-Figueroa", "Tommy Roy Castillo", "Bill Beltran Summers", "Chris Fernandez", "Roland Hill", "Arnold Tapia", "Justin Angel Jose Calatayud", "Sean Sampedro", "Kirk Frances", "Lucio Ochoa", "Abdelaziz Gisbert", "Jamie Snyder", "Senor Eder Amador", "Adam Ripoll", "Jose Mariano Gordillo", "Arnau Sergio Vicente", "Eduard White", "Ismail Olmos", "Yahya Mena", "Emilio Zaragoza", "Clarence Mclaughlin-Dawson", "Florin Willis", "Brad Abdoulaye Alonso", "Senor Miguel Antonio Olivares-Echeverria", "Clayton Henry Trujillo-Lang", "Gilbert Eugene Russell", "Willie Del Campo-Estevez", "Mihai Baeza", "Rick Kennedy", "Harold Mcdaniel", "Raul Fritz", "Charlie Robertson", "Silverio Marin", "Amin Tapia-Waller", "Unai Collins-Cerdan", "Abdelaziz Joyce", "Eduard Montenegro", "Senor Bogdan Walter Osborn-Latorre", "Bernard Mohamed", "Jeremy Troy Mathews-Sebastian", "Roland Bass", "Franklin Jamie Monteagudo", "Dustin Montero", "Ioan Ballard", "Guillermo Francisco Jose Short", "Joe Rafael Popa-Fletcher", "Chester Venancio Sanders", "Adil Carpio", "Alexander Angel Maria Hendrix", "Salah Micheal Peiro", "Edward Corral", "Victor Henry Terry"},
+            {"Mariola Gumersinda Fuller", "SenoraRosario Maria Gardner", "Cleo Gimenez-Walters", "Agnes Bridges", "Katrina Blankenship-Souto", "Carolina Lynne Beck-Izquierdo", "Agnes Eulogia Cuellar", "Maria Marta Marlene Soler", "Gwendolyn Combs", "Sylvia Joana Prince-Jerez", "Mayra Ana Victoria Sacristan", "Ericka Segura", "Rose Llanos", "Juliana Abril", "Bernardina Alvarez", "Elena Maria Cherie Arteaga", "Lesley Lozano-Vazquez", "Melissa Freire", "Keisha Ashlee Herrero", "Julieta Revuelta", "Therese Bennett-Torralba", "Gracia Adela Booker", "SenoraMarta Maria Hermoso-Cole", "Carmen Maria Patterson-Castano", "Brenda Maria Dolors Burton-Mejia", "Leyre Genoveva Wolf", "Florica Gisbert-Sims", "Alberta Miranda Gordillo-Hunt", "Lidia Valle", "Samanta Felipe", "Leyre Burgos-Molina", "SenoraMaria Angustias Cornelia Cubero", "Maria Amparo Barbra Espin", "Luz Divina Frey", "Maria Cinta Rodenas-Morillas", "Shana Velasquez", "Katelyn Lois Chamorro-Spears", "Maria Azucena Matthews-Mesa", "Maria Sol Parsons", "Oksana Marti-Brandt", "Caitlin Gordo-Richard", "Leanna Castellano-Murillo", "Nerea Mcguire", "Tania Holt-Carro", "Herminia Victoriana Hensley", "SenoraEstela Barron-Dickerson", "Erica Newton-Angulo", "Kristi Reid", "Daisy Willa Ochoa-Galindo", "Edwina Martinez", "Isabel Gibson", "Catalina Gordon", "Maria Merce Travis-Moral", "Della Esmeralda Khan", "Gilda Wilkerson-Quiroga", "SenoraAurea Madge Palomino", "Maria Alejandra Sondra Morrison-Sparks", "SenoraNahia Lawson", "Sadie Prat-Curry", "Cora Ruiz", "Merle Blanca Esther Waller", "Jill Cooke", "Bianca Escobar-Borja", "Martha Cole-Huff", "Maribel Gordo-Stuart", "SenoraLatifa Patel", "Camelia Mayoral-Mccormick", "Uxue Maria Reyes Pavon", "Eneritz Rovira", "Maria Luisa Amado", "Najat Felipa Huber", "Kerri Laurel Oliveira", "Lindsay Roberson", "Colette Duran", "Roberta Tomas-Aguado", "Lawanda Reilly-Bastida", "Yasmin Ordonez", "Valerie Guadalupe Ingram", "Paige Vaca-Hayden", "Celeste Vilches", "Candida Maria Julia Serrano", "Ascension Alicia Maria Roig", "Modesta Monroe-Gisbert", "SenoraHilaria Alegre", "Bouchra Alvarado", "Reyna Nora Molinero", "Kellie Jennifer Maroto", "Dorina Felipe", "Viola Lessie De La Cruz", "Angelique Aragon", "Emma Valiente", "Elizabeth Cohen", "Leola Vega-Pavon", "Monica Burgos", "Jeanine Morris", "Eva Maria Courtney Bennett", "Graciela Mcgrath", "Ivet Real", "Maria Vicenta Blackwell-Hammond", "Eider Marianne Salazar", "Rosa Elena Duran", "Earlene Montesinos", "Louisa Mills-Boix", "Nicoleta Maria Monserrat Alfonso", "Maria Loreto Exposito", "Thelma Maximina Dillon", "SenoraMaria Begona Ana Rosa Mata-Velasco", "June Kristina Carro", "Barbara Soriano", "Iluminada Lorraine Howe", "Palmira Maria Estrella Suarez", "Karen Mariya Cooley", "Adriana Reeves", "Aileen Mathis-Bilbao", "Camelia Roberson", "SenoraMaria Ines Ana Lucia Pellicer-Bishop", "Melanie Richmond-Macia", "Caroline Bruce", "Amina Saez", "Manuela Espinosa", "SenoraAurea Segura", "Christine Isidra Cuadrado", "Josefina Wood-Checa", "SenoraDesire Compton", "Reyes Baird-Carrascosa", "Juliana Carr-Ferrera", "SenoraMiren Edurne Alcazar", "Jeanine Valentine-Stevens", "Iris Mcneil", "Irati Charmaine Canales", "SenoraNerea Barea", "Daria Roy-Sanchis", "Anastasia Lauri Baker-Stephenson", "Frances Cabrera", "Consuelo Melgar-Holder", "Patsy Tucker-Afonso", "Robyn Coleman", "SenoraMaria Adoracion Maria Celeste Escobar", "SenoraBouchra Polo-De La Rosa", "Beth Mirella Watson", "Aldara Short-Echevarria", "Polly Maria Estela Mcdaniel-Bermejo", "Emilia Angelia Schmitt", "SenoraAina Lane-Cooper", "Minerva Yague", "Maria Lorena Hunt", "Bianca Valls", "Yara Bolton-Bustamante", "Maria Milagrosa Eulogia Caamano-Horne", "SenoraOlga Damaris Luis-Good", "Mirela Martha Cecilia Mckee", "Leola Ortiz", "Stacie Serra-Beltran", "Bibiana Woods-Richards", "Beverly Casares", "Modesta Zhou", "Lilly Desiree Barros-Gordon", "Dominique Morrow", "Annette Davenport-Sala", "Taylor Juana Maria Gimeno-Knight", "Annette Novak", "SenoraZoraida Gamero-Hunt", "Tracie Palomares-Francisco", "Maria Pino Emma Cordoba", "Rosetta Gilmore-Myers", "Habiba Mann-Frost", "SenoraMaria Paloma Torrejon-Callahan", "Zaida Celia Maria Whitney", "Ileana Lia Chase-Sacristan", "Jeronima Frederick", "SenoraGina Serrano-Pelaez", "SenoraJanire Canas-Luis", "Mariona Alma Ritter-Mclaughlin", "Alisha Nieves", "Belen Jimenez", "Dolores Maria Sexton-Abril", "Selene Sarmiento-Carretero", "Gumersinda Palmer", "Nona Espana", "SenoraYolanda Maria Glenna Guerrero", "Izaskun Sabater", "Therese Olsen", "Anne Campillo-Salas", "Delfina Walton", "Jodie Padilla-Shannon", "SenoraEmma Francisca Maria Amoros", "Marianne Black", "Gema Ocana-Duran", "Eider Matthews", "Estella Felecia Mas-Leon", "Maya House-Bradshaw", "Francesca Juliette Saez-Shields", "Raquel Roldan-Calderon", "Kathryn Terrie Popa", "Rosanna Padron"}};
     private String [][] SovUcas={{"UCasmale 1","UCasmale 2","UCasmale 3"},
             {"UCasfemale 1","UCasfemale 2","UCasfemale 3"}};
     private String [][] SovAgs={{"Agsmale 1","Agsmale 2","Agsmale 3"},
@@ -97,33 +97,33 @@ public class nameGenModel{
                 return SovCas;
             case "SovAgs":
                 return SovAgs;
-            case "SovUcas":
+            case "SovUca":
                 return SovUcas;
-            case "SovAztlan":
+            case "SovAzt":
                 return SovAztlan;
-            case "SovHongKong":
+            case "SovHon":
                 return SovHongKong;
-            case "OriGerman":
+            case "OriGer":
                 return OriGerman;
-            case "OriRussian":
+            case "OriRus":
                 return OriRussian;
-            case "OriPolish":
+            case "OriPol":
                 return OriPolish;
-            case "OriJapanese":
+            case "OriJap":
                 return OriJapanese;
-            case "OriChinese":
+            case "OriChi":
                 return OriChinese;
-            case "OriFrench":
+            case "OriFre":
                 return OriFrench;
-            case "OriArabic":
+            case "OriAra":
                 return OriArabic;
-            case "OriSpanish":
+            case "OriSpa":
                 return OriSpanish;
-            case "OriItalian":
+            case "OriIta":
                 return OriItalian;
-            case "OriAmerican":
+            case "OriAme":
                 return OriAmerican;
-            case "OriBritish":
+            case "OriBri":
                 return OriBritish;
         }
         return null;
