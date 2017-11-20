@@ -199,6 +199,61 @@ public class MainActivity extends AppCompatActivity {
                 controller.buildContext("Hon");
                 setContentView(R.layout.activity_gender);
                 break;
+            case R.id.ori_ame:
+                controller.buildContext("Ame");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_ger:
+                controller.buildContext("Ger");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_rus:
+                controller.buildContext("Rus");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_pol:
+                controller.buildContext("Pol");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_jap:
+                controller.buildContext("Jap");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_chi:
+                controller.buildContext("Chi");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_fre:
+                controller.buildContext("Fre");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_ara:
+                controller.buildContext("Ara");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_spa:
+                controller.buildContext("Spa");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_ita:
+                controller.buildContext("Ita");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
+            case R.id.ori_bri:
+                controller.buildContext("Bri");
+                //set to gender selection
+                setContentView(R.layout.activity_gender);
+                break;
             case R.id.gender_both:
                 controller.buildContext("0");
                 displayNames();
@@ -213,6 +268,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.gen_refresh:
                 displayNames();
+                break;
+            case R.id.main_loadNames:
+                loadMode=true;
+                Intent dataIntent = new Intent(this, DataActivity.class);
+                this.startActivity(dataIntent);
+                overridePendingTransition(R.anim.fade_in, 0);
                 break;
             case R.id.main_rss:
                 //Looper.prepare();
@@ -272,9 +333,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void displayList( ArrayList<Item> items ) {
-        Log.d("inapp", items.toString());
+
         listItems = items;
         if( items != null ) {
+            Log.d("inapp", items.toString());
             // Build ArrayList of titles to display
             ArrayList<String> titles = new ArrayList<String>( );
             for( Item item : items ){
@@ -299,6 +361,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         controller.resetContext();
         setContentView(R.layout.activity_main);
+        rsson=false;
         //super.onBackPressed();
     }
 
